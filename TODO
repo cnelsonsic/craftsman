@@ -1,0 +1,23 @@
+Add a simple flask app to show the interface and serve up resources.
+    Use Frozen-Flask to make it into a static site.
+    It should consist entirely of javascript, with no python backend at all.
+    Any save-games should be stored client-side.
+    It's a desktop app masquerading as a browser game.
+    It should be servable with any simple http server. Example: http://code.google.com/p/mongoose/
+Add some javascript to track location in a map loaded from disk
+    Yes, players could cheat if they wanted to.
+Hook up the movement buttons to actual movement
+    Rotation will probably be a pain
+        "Forward" will mean "Move to the node that is in the direction that I am currently facing."
+        Could ask the user if there's any ambiguity.
+        Could also add a check for this when building.
+            "Hey, your paths are ambiguous. They don't constrain to just NSEW."
+            Nodes should be 1u in any one direction. If other directions are more than 0, it's an error.
+    Also reload the viewport
+Set up a .blend file and a script to do automated rendering of scenes.
+    Model the scene
+    Add empties for each possible player location, within the constraints of the 5ft square.
+    Render the scene from each empty's position in all 4 directions. (No rotation animations.)
+    Also generate the map file that the javascript loads
+        It will require manual editing of what connects where
+        unless we move from empties to bones, which can branch.
